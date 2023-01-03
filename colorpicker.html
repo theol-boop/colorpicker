@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+          transition: background-color 1s, color 1s;
+        }
+        #circle {
+          width: 300px;
+          height: 300px;
+          border-radius: 30%;
+          background-color: currentColor;
+          margin: 100px auto;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+      </style>
+      
+</head>
+<body>
+  <button id="btn">Generate Colors</button>
+  <div id="circle">Hello World!</div>
+  <script>
+    function generateColors() {
+  let H = Math.floor(Math.random() * 360);
+  let S = Math.floor(Math.random() * 100 + 100);
+  let B = Math.floor(Math.random() * 30 + 70);
+  let bgH = Math.floor(Math.random() * 180);
+  let bgS = Math.floor(Math.random() * 100);
+  let bgB = Math.floor(Math.random() * 20);
+
+  document.body.style.backgroundColor = `hsla(${bgH}, ${bgS}%, ${bgB}%, 1)`;
+  document.body.style.color = `hsl(${H}, ${S}%, ${B}%)`;
+}
+
+
+
+    document.getElementById('btn').addEventListener('click', generateColors);
+  </script>
+</body>
+</html>
